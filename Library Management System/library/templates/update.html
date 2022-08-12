@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Library Management System</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="css" href="11.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <center><h2>Update Books Into Table</h2></center>
+      <form method="POST">
+        {% csrf_token%}
+        <div class="form-group">
+          <label for="bookid">Book ID : </label>
+          <input
+            type="text"
+            value="{{upd.book_id}}"
+            class="form-control"
+            autocomplete="off"
+            placeholder="Book"
+            name="id"
+            required
+            disabled
+            readonly
+          />
+        </div>
+        <div class="form-group">
+          <label for="bookname">Enter Book Name : </label>
+          <input
+            type="text"
+            value="{{upd.book_name}}"
+            class="form-control"
+            autocomplete="off"
+            placeholder="Enter Book Name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="bookdescription">Enter Book Description : </label>
+          <input
+            type="text"
+            class="form-control"
+            value="{{upd.book_description}}"
+            autocomplete="off"
+            placeholder="Enter Book Description"
+            name="description"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="col-sm-1">
+            <button
+              type="submit"
+              class="btn btn-success"
+              value="submit"
+              name="submit"
+            >
+              Update Book
+            </button>
+          </div>
+          {% if messages %} {% for message in messages %}
+
+          <script>
+            header("Location:index.html");
+            exit;
+          </script>
+          {% endfor %} {% endif %}
+        </div>
+
+        <br />
+      </form>
+    </div>
+  </body>
+</html>

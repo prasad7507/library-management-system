@@ -1,0 +1,15 @@
+requirements-
+    XAMPP server
+    Python
+build in version-
+    Python 3.10.2 
+    Django-admin 2.03
+
+Steps for running project:-
+1)To run this project first create database and tables refer to Database_Documentaion.txt file.
+2)Run XAMPP and start Apache and MySQL server  
+3)In Project Directory open terminal or command prompt and type 
+'python manage.py runserver'
+4)After running above command click on the server link in the terminal to open the home page of project or type this link in any web browser
+'http://127.0.0.1:8000/'
+5)After that Signup and login and perform CRUD operations

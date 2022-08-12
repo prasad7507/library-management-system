@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Library Management System</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000/login/"
+              >Login <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token%}
+        <div class="form-group">
+          <label for="name">Enter Name : </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Name"
+            name="name"
+            required
+          /><br />
+          <label for="email">Enter Email : </label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter email"
+            name="email"
+            required
+          /><br />
+          <label for="userpassword">Enter Password : </label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Enter password"
+            name="password"
+            required
+          /><br />
+          <div class="row">
+            <div class="col-sm-1">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                value="signup"
+                name="signup"
+              >
+                signup
+              </button>
+            </div>
+            <div class="col-sm-1">
+              <button
+                type="reset"
+                class="btn btn-primary"
+                value="cancel"
+                name="cancel"
+              >
+                cancel
+              </button>
+            </div>
+            {% if messages %} {% for message in messages %} {{message}}
+            <script>
+              {% comment %} header("Location:index.html");
+              exit; {% endcomment %}
+            </script>
+
+            {% endfor %} {% endif %}
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
